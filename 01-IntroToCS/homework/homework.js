@@ -1,5 +1,7 @@
 'use strict'
 
+//Holaaa
+
 function BinarioADecimal(num) {
   // tu codigo aca
   return Number.parseInt(num, 2);
