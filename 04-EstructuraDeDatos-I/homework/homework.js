@@ -15,10 +15,25 @@ Como ejercicio adicional y completamente opcional, al terminar de resolver este 
 */
 
 function nFactorial(n) {
+  if(n > -1 && n < 2){
+    return 1;
+  } else {
+    return n * nFactorial(n - 1);
+  }
 }
+//Aca se aplica el concepto de recursividad. Lista lineal --> Pilas ---> Last in - first out  
+//nFactorial(1) =  1
+//nFactorial(2) =  2 * 1
+//nFactorial(3) =  3 * 2
+//nFactorial(4) =  4 * 6
+// nFactorial(5) = 5 * 24 = 120
+
 
 function nFibonacci(n) {
+  if(n < 2 ) return n;
+  return nFibonacci( n-2) + nFibonacci(n-1);
 }
+
 
 /*
 Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde el primer elemento que ingresa es el primero que se quita. Definir los siguientes métodos:
@@ -27,11 +42,32 @@ Implementar la clase Queue, sabiendo que es una estructura de tipo FIFO, donde e
   - size: retorna el tamaño (cantidad de elementos) de la queue.
 
 Pueden utilizar class o función constructora.
+
+  if(this.array == []){
+    return undefined;
+  } else {
+    this.array.shift();
+  };
 */
 
 function Queue() {
-
+  //constructor
+  this.array = [];
 }
+
+Queue.prototype.size = function(){
+  return this.array.length;
+};
+
+Queue.prototype.enqueue = function(elemento){
+  this.array.push(elemento);
+};
+
+Queue.prototype.dequeue = function(){
+  return this.array.shift();
+};
+
+
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
