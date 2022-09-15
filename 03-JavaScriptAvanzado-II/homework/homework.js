@@ -24,6 +24,11 @@ function counter() {
     return ++contador;
   };
 }
+//otra forma
+/*  var contador = 1;
+  return function(){
+    return contador++;
+  };*/ 
 
 //const nuevoContador = counter();
 //console.log(nuevoContador());
@@ -95,6 +100,8 @@ let getNombreAlumno = getNombre.bind(alumno);
 function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
   return delimitadorIzquierda + cadena + delimitadorDerecha;
 }
+
+//usamos el bind para fijar argumentos
 
 let textoAsteriscos = crearCadena.bind(this, '*','*');
 let textoGuiones = crearCadena.bind(this, '-','-');
